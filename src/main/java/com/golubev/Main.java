@@ -1,38 +1,12 @@
 package com.golubev;
 
 public class Main {
-    public int calcSum(int[] sales) {
-        int sum = 0;
-        for(int sale : sales) {
-            // sum = sum + sale;
-            sum += sale;
+    public long findMax(long[] incomes) {
+        long current_max_index = 0;
+        long current_max = incomes[0];
+        for (long income : incomes)
+            if (current_max < income)
+                current_max = income;
+        return current_max;
         }
-        return sum;
     }
-
-    public int findAverage(int[] sales) {
-        return calcSum(sales) / sales.length;
-
-    }
-
-    public int findMax(int[] sales) {
-        int currentMax = sales[0];
-        for (int sale : sales) {
-            if (currentMax < sale) {
-                currentMax = sale;
-            }
-        }
-        return currentMax;
-    }
-
-    public int findLongestWord(String[] words) {
-        int length = 0;
-        for (String word : words) {
-            int currentLength = word.toCharArray().length;
-            if(currentLength > length) {
-                length = currentLength;
-            }
-        }
-        return length;
-    }
-}
